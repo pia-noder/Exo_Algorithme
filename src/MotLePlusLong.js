@@ -9,7 +9,7 @@ function retournerLeMotLePlusLong(mot){
     let longueurLaPlusLongue = 0;
     
       listMotsDeDépart.forEach(element => {
-        //Comparer la longueur des différents mots pour trouver le          plus long
+        //Comparer la longueur des différents mots pour trouver le mot  plus long
           if(element.length > longueurLaPlusLongue){
             motLePlusLong = [];
             longueurLaPlusLongue = element.length;
@@ -22,4 +22,4 @@ function retournerLeMotLePlusLong(mot){
   }
   
   
-  console.log(retournerLeMotLePlusLong('Comment vas-tu ?'));
+  console.log(retournerLeMotLePlusLong('The quick brown fox jumped over the lazy dog .'));
