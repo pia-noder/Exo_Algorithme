@@ -44,3 +44,25 @@ function isPalindrome(word){
 console.log(isPalindrome('anne'))
 console.log(isPalindrome('anna'))
 isPalindrome('anne');
+
+isPalindromeShort('anna');
+
+function isPalindromeShort(word){
+	if(typeof word === 'string'){
+	var re = /[\W_]/g;
+    var wordLowerCaseReg = word.toLowerCase().replace(re, '');
+	let reversed = wordLowerCaseReg.split('').reverse().join('');
+
+	if(wordLowerCaseReg === reversed){
+		return true
+	}else{
+		return false
+	}
+}else{
+	alert('Passez une chaîne de caractères (= un mot) en argument')
+}
+};
+
+isPalindromeShort('Kayak');
+console.log(isPalindromeShort('anna'));
+console.log(isPalindromeShort('anne'));
