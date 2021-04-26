@@ -1,5 +1,6 @@
-//Code une fonction qui détermine si le mot est un palindrome
+//Code une fonction qui détermine si le mot est un palindrome (2versions)
 
+//version 1 :
 //Comparer le mot d'origine avec son inverse; fonction intégrée dans 
 function comparedLetters(toCompare, reversed){
 	let x = 0;
@@ -47,20 +48,26 @@ isPalindrome('anne');
 
 isPalindromeShort('anna');
 
+
+//______________________________________________________________________________________________
+
+//version 2 :
+//Fonction similaire à celle du dessus mais en condensé, avec les fonctions attachées sur une même ligne
 function isPalindromeShort(word){
 	if(typeof word === 'string'){
-	var re = /[\W_]/g;
-    var wordLowerCaseReg = word.toLowerCase().replace(re, '');
-	let reversed = wordLowerCaseReg.split('').reverse().join('');
+		var re = /[\W_]/g;//Cibler les caractère spéciaux et le underscore
+		var wordLowerCaseReg = word.toLowerCase().replace(re, '');//Supprimer les caractères ciblés par la Regex et tout mettre en minuscules
+		let reversed = wordLowerCaseReg.split('').reverse().join('');
 
-	if(wordLowerCaseReg === reversed){
-		return true
+		//Vérifier si l'argument word est égal à word retourné
+		if(wordLowerCaseReg === reversed){
+			return true
+		}else{
+			return false
+		}
 	}else{
-		return false
+		alert('Passez une chaîne de caractères (= un mot) en argument');
 	}
-}else{
-	alert('Passez une chaîne de caractères (= un mot) en argument')
-}
 };
 
 isPalindromeShort('Kayak');
